@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <a class="navbar-brand" href="/">Hell Yeah</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <ul class="navbar-nav ml-auto">
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <li class="nav-item">
+        <a class="nav-link" href="/shopping-cart"><i class="fas fa-fw fas fa-shopping-cart"></i> Shopping Cart
+          <span class="badge badge-secondary">{{session.cart.totalQty}}</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fas fa-user"></i> User management
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          {{# if login}}
+            <a class="dropdown-item" href="/user/profile">User account</a>
+            <a class="dropdown-item" href="/user/logout">Logout</a>
+          {{ else }}
+            <a class="dropdown-item" href="/user/signup">Sign Up</a>
+            <a class="dropdown-item" href="/user/signin">Sign In</a>
+          {{/if}}
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
